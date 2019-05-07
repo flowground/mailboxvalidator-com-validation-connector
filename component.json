@@ -1,0 +1,51 @@
+{
+    "title": "MailboxValidator Email Validation",
+    "description": "The Single Validation API does validation on a single email address and returns all the validation results in either JSON or XML format. Refer to https://www.mailboxvalidator.com for further information.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/mailboxvalidator.com/validation/0.1/openapi.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.mailboxvalidator.com",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_v1_validation_single": {
+            "main": "./lib/actions/get_v1_validation_single.js",
+            "title": "The Single Validation API does validation on a single email address and returns all the validation results in either JSON or XML format.",
+            "description": "The Single Validation API does validation on a single email address and returns all the validation results in either JSON or XML format.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_validation_single.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

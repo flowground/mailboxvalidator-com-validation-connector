@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "format": {
+            "enum": [
+                "json",
+                "xml"
+            ],
+            "type": "string"
+        },
+        "email": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
